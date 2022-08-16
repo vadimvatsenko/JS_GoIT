@@ -1,0 +1,71 @@
+Ветвления используются для выполнения различного кода в зависимсти от условия. Принцип работы простой - результат условия приводится к булю true или false, после чего поток программы направляется в ту или иную ветку.
+//
+======Инструкция if
+if (условие) {
+  // тело if
+}
+------
+let cost = 0;
+const subscription = "pro";
+
+if (subscription === "pro") {
+  cost = 100;
+}
+
+console.log(cost); // 100
+------
+let cost = 0;
+const subscription = "free";
+
+if (subscription === "pro") {
+  cost = 100;
+}
+
+console.log(cost); // 0
+
+======Инструкция if...else
+if (условие) {
+  // тело if
+} else {
+  // тело else
+}
+------
+let cost;
+const subscription = "free";
+
+if (subscription === "pro") {
+  cost = 100;
+} else {
+  cost = 0;
+}
+
+console.log(cost); // 0
+------
+Если условие приводится к true, тело блока else игнорируется.
+let cost;
+const subscription = "pro";
+
+if (subscription === "pro") {
+  cost = 100;
+} else {
+  cost = 0;
+}
+
+console.log(cost); // 100
+------
+Блок else...if позволяет добавить после else еще один оператор if с условием. В конце цепочки может быть классический блок else, который выполнится только в случае, когда ни одно из условий не приведётся к true.
+let cost;
+const subscription = "premium";
+
+if (subscription === "free") {
+  cost = 0;
+} else if (subscription === "pro") {
+  cost = 100;
+} else if (subscription === "premium") {
+  cost = 500;
+} else {
+  console.log("Invalid subscription type");
+}
+
+console.log(cost); // 500
+

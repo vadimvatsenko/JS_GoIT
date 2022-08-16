@@ -1,0 +1,38 @@
+======Инструкция switch
+Область применения switch ограничена задачами с одним общим вопросом (что сравнивать) и множеством вариантов ответов (с чем сравнивать).
+------
+switch (значение) {
+  case значение:
+    инструкции;
+    break;
+
+  case значение:
+    инструкции;
+    break;
+
+  default:
+    инструкции;
+}
+------
+Значение в блоке switch(значение) - строка или число, которое сравнивается на строгое равенство со всеми значениями в блоках case значение по порядку, сверху вниз.
+let cost;
+const subscription = "premium";
+
+switch (subscription) {
+  case "free":
+    cost = 0;
+    break;
+
+  case "pro":
+    cost = 100;
+    break;
+
+  case "premium":
+    cost = 500;
+    break;
+
+  default:
+    console.log("Invalid subscription type");
+}
+
+console.log(cost); // 500

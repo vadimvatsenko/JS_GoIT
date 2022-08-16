@@ -1,0 +1,49 @@
+Массив обьектов
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "На берегу спокойных вод",
+    author: "Роберт Шекли",
+    rating: 8.51,
+  },
+  {
+    title: "Сон смешного человека",
+    author: "Федор Достоевский",
+    rating: 7.75,
+  },
+];
+=======
+Для перебора такого массива используется стандартный цикл for...of
+for (const book of books) {
+  // Объект книги
+  console.log(book);
+  // Название
+  console.log(book.title);
+  // Автор
+  console.log(book.author);
+  // Рейтинг
+  console.log(book.rating);
+}
+========
+Например, получим список названий всех книг в коллекции books.
+const bookNames = [];
+
+for (const book of books) {
+  bookNames.push(book.title);
+}
+
+console.log(bookNames); // ["The Last Kingdom", "На берегу спокойных вод", "Сон смешного человека"]
+========
+Узнаем средний рейтинг всей нашей коллекции
+let totalRating = 0;
+
+for (const book of books) {
+  totalRating += book.rating;
+}
+
+const averageRating = (totalRating / books.length).toFixed(1);
+console.log(averageRating); // 8.2
