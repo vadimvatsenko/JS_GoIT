@@ -1,9 +1,17 @@
-function multiply(firstNumber, secondNumber, ...otherArgs) {
-  console.log(firstNumber); // Значение первого аргумента
-  console.log(secondNumber); // Значение второго аргумента
-  console.log(otherArgs); // Массив остальных аргументов
-}
+const ancestor = {
+  name: "Paul",
+  age: 83,
+  surname: "Dawson",
+  heritage: "Irish",
+};
+// Change code below this line
 
-multiply(1, 2);
-multiply(1, 2, 3);
-multiply(1, 2, 3, 4);
+const parent = {};
+parent.name = "Stacey";
+parent.surname = "Moore";
+parent.age = 54;
+
+const child = {};
+child.name = "Jason";
+child.age = 27;
+
