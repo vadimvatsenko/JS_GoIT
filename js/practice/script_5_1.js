@@ -96,4 +96,65 @@ invokeAction(user.showTag);
 const fn = function () {
     console.log('fn -> this', this);
 };
-fn();
+fn();//underfind
+//
+
+//тренируемся 2
+const book = {
+    title: 'react for beginners',
+    showThis() {
+        console.log('showTitle -> this:', this.title);
+    },
+};
+book.showThis();//showTitle -> this: react for beginners
+//const book в ней вызывается функция showThis в которой
+//вызывается console.log в котором this.title - 
+// будет ссылатся на book.showThis - тоесть на book
+const outerShowThis = book.showThis;
+outerShowThis();//undefined
+// undefined нотому что нет обьекта в данном случае должен 
+// быть book
+const outerShowTitle = book.showTitle;
+outerShowTitle();//underfined
+//
+
+//тренируемся 3
+const makeChangeColor = function () {
+    const changeColor = function (color) {
+        console.log('chengeColor -> this:', this);
+        // this.color = color;
+    };
+    const sweater = {
+        color: 'teal',
+    };
+    sweater.updateColor = changeColor;
+    // sweater.updateColor('red');
+    return sweater.updateColor;
+};
+// makeChangeColor();
+const swapColor = makeChangeColor();
+swapColor('blue');//underfind
+//
+
+//тренируемся 4
+const makeChangeColor = function () {
+    const changeColor = function (color) {
+        console.log('changeColor -> this', this);
+        // this.color = color;
+    };
+    return changeColor;
+};
+
+const updateColor = makeChangeColor();
+updateColor('yellow');
+
+const hat = {
+    color: 'blue',
+    updateColor,
+};
+
+hat.updateColor('orange');
+
+
+
+
