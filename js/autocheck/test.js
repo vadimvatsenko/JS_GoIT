@@ -1,8 +1,9 @@
-const animal = {
-  legs: 4,
-};
-const dog = Object.create(animal);
-dog.name = "Манго";
+function multiply(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber); // Значение первого аргумента
+  console.log(secondNumber); // Значение второго аргумента
+  console.log(otherArgs); // Массив остальных аргументов
+}
 
-console.log(dog); // { name: 'Манго', __proto__: animal }
-console.log(animal.isPrototypeOf(dog)); // true
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);
